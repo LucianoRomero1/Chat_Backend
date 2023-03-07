@@ -23,7 +23,7 @@ const UserSchema = Schema({
 //Esto se llama la retornarlo con un .json en el controlador
 UserSchema.method("toJSON", function () {
   //Las primeras son las que saco, el object es lo que queda
-  const { __v, _id, password, online, ...object } = this.toObject();
+  const { __v, _id, password, ...object } = this.toObject();
   object.uid = _id;
   return object;
 });
